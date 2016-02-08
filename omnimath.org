@@ -41,7 +41,7 @@
 
 * Introduction
 
-Once upon a time the main customer of mathematics was the greater world of physics and engineering. While today's world is just as involved with physics and engineering as ever, we now find it necessary to broaden mathematics to include the world of computers and their unique approach to mathematics. Along with classic /[[https://en.wikipedia.org/wiki/Mathematical_analysis][continuous]]/ mathematics, computers have ushered in a new era of /[[https://en.wikipedia.org/wiki/Discrete_mathematics][discrete]]/ mathematics.
+Once upon a time the main customer of mathematics was the greater world of physics and engineering. While in today's world math is just as involved with physics and engineering as ever, we now find it necessary to broaden mathematics to include the world of computers and their unique approach to mathematics. Along with classic /[[https://en.wikipedia.org/wiki/Mathematical_analysis][continuous]]/ mathematics, computers have ushered in a new era of /[[https://en.wikipedia.org/wiki/Discrete_mathematics][discrete]]/ mathematics.
 
 Roughly speaking, /continuous/ math is the math of things in motion, e.g., objects and their paths or trajectories, forces measured to the decimal place. In continuous math there is typically a /formula/. On the other hand, /discrete/ math deals with separate, discrete entities, things are usually reoresented wuth integers, there are /systems/ of finite, non-smoothly associated objects.
 
