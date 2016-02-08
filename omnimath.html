@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+    <head>
+        <!-- 2016-02-08 Mon 21:01 -->
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Prepatory Mathematics in the Age of Information</title>
+        <meta name="generator" content="Org-mode" />
+        <meta name="author" content="teilchen010" />
+        <style type="text/css">
+            <!--
+            /*--><![CDATA[/*><!--*/
+            
+            .title {
+                text-align: center;
+                margin-bottom: .2em;
+            }
+            
+            .subtitle {
+                text-align: center;
+                font-size: medium;
+                font-weight: bold;
+                margin-top: 0;
+            }
+            
+            .todo {
+                font-family: monospace;
+                color: red;
+            }
+            
+            .done {
+                font-family: monospace;
+                color: green;
+            }
+            
+            .priority {
+                font-family: monospace;
+                color: orange;
+            }
+            
+            .tag {
+                background-color: #eee;
+                font-family: monospace;
+                padding: 2px;
+                font-size: 80%;
+                font-weight: normal;
+            }
+            
+            .timestamp {
+                color: #bebebe;
+            }
+            
+            .timestamp-kwd {
+                color: #5f9ea0;
+            }
+            
+            .org-right {
+                margin-left: auto;
+                margin-right: 0px;
+                text-align: right;
+            }
+            
+            .org-left {
+                margin-left: 0px;
+                margin-right: auto;
+                text-align: left;
+            }
+            
+            .org-center {
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+            
+            .underline {
+                text-decoration: underline;
+            }
+            
+            #postamble p,
+            #preamble p {
+                font-size: 90%;
+                margin: .2em;
+            }
+            
+            p.verse {
+                margin-left: 3%;
+            }
+            
+            pre {
+                border: 1px solid #ccc;
+                box-shadow: 3px 3px 3px #eee;
+                padding: 8pt;
+                font-family: monospace;
+                overflow: auto;
+                margin: 1.2em;
+            }
+            
+            pre.src {
+                position: relative;
+                overflow: visible;
+                padding-top: 1.2em;
+            }
+            
+            pre.src:before {
+                display: none;
+                position: absolute;
+                background-color: white;
+                top: -10px;
+                right: 10px;
+                padding: 3px;
+                border: 1px solid black;
+            }
+            
+            pre.src:hover:before {
+                display: inline;
+            }
+            
+            pre.src-sh:before {
+                content: 'sh';
+            }
+            
+            pre.src-bash:before {
+                content: 'sh';
+            }
+            
+            pre.src-emacs-lisp:before {
+                content: 'Emacs Lisp';
+            }
+            
+            pre.src-R:before {
+                content: 'R';
+            }
+            
+            pre.src-perl:before {
+                content: 'Perl';
+            }
+            
+            pre.src-java:before {
+                content: 'Java';
+            }
+            
+            pre.src-sql:before {
+                content: 'SQL';
+            }
+            
+            table {
+                border-collapse: collapse;
+            }
+            
+            caption.t-above {
+                caption-side: top;
+            }
+            
+            caption.t-bottom {
+                caption-side: bottom;
+            }
+            
+            td,
+            th {
+                vertical-align: top;
+            }
+            
+            th.org-right {
+                text-align: center;
+            }
+            
+            th.org-left {
+                text-align: center;
+            }
+            
+            th.org-center {
+                text-align: center;
+            }
+            
+            td.org-right {
+                text-align: right;
+            }
+            
+            td.org-left {
+                text-align: left;
+            }
+            
+            td.org-center {
+                text-align: center;
+            }
+            
+            dt {
+                font-weight: bold;
+            }
+            
+            .footpara {
+                display: inline;
+            }
+            
+            .footdef {
+                margin-bottom: 1em;
+            }
+            
+            .figure {
+                padding: 1em;
+            }
+            
+            .figure p {
+                text-align: center;
+            }
+            
+            .inlinetask {
+                padding: 10px;
+                border: 2px solid gray;
+                margin: 10px;
+                background: #ffffcc;
+            }
+            
+            #org-div-home-and-up {
+                text-align: right;
+                font-size: 70%;
+                white-space: nowrap;
+            }
+            
+            textarea {
+                overflow-x: auto;
+            }
+            
+            .linenr {
+                font-size: smaller
+            }
+            
+            .code-highlighted {
+                background-color: #ffff00;
+            }
+            
+            .org-info-js_info-navigation {
+                border-style: none;
+            }
+            
+            #org-info-js_console-label {
+                font-size: 10px;
+                font-weight: bold;
+                white-space: nowrap;
+            }
+            
+            .org-info-js_search-highlight {
+                background-color: #ffff00;
+                color: #000000;
+                font-weight: bold;
+            }
+            /*]]>*/
+            
+            -->
+        </style>
+        <link rel="stylesheet" href="data/stylesheet.css" type="text/css">
+        <script type="text/javascript">
+            /*
+            @licstart  The following is the entire license notice for the
+            JavaScript code in this tag.
+
+            Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+            The JavaScript code in this tag is free software: you can
+            redistribute it and/or modify it under the terms of the GNU
+            General Public License (GNU GPL) as published by the Free Software
+            Foundation, either version 3 of the License, or (at your option)
+            any later version.  The code is distributed WITHOUT ANY WARRANTY;
+            without even the implied warranty of MERCHANTABILITY or FITNESS
+            FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+            As additional permission under GNU GPL version 3 section 7, you
+            may distribute non-source (e.g., minimized or compacted) forms of
+            that code without the copy of the GNU GPL normally required by
+            section 4, provided you include this license notice and a URL
+            through which recipients can access the Corresponding Source.
+
+
+            @licend  The above is the entire license notice
+            for the JavaScript code in this tag.
+            */
+            <!--/*--><![CDATA[/*><!--*/
+            function CodeHighlightOn(elem, id) {
+                var target = document.getElementById(id);
+                if (null != target) {
+                    elem.cacheClassElem = elem.className;
+                    elem.cacheClassTarget = target.className;
+                    target.className = "code-highlighted";
+                    elem.className = "code-highlighted";
+                }
+            }
+
+            function CodeHighlightOff(elem, id) {
+                var target = document.getElementById(id);
+                if (elem.cacheClassElem)
+                    elem.className = elem.cacheClassElem;
+                if (elem.cacheClassTarget)
+                    target.className = elem.cacheClassTarget;
+            }
+            /*]]>*/ //-->
+        </script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ displayAlign: "left", displayIndent: "5em", "HTML-CSS": { scale: 100, linebreaks: { automatic: "false" }, webFont: "Neo-Euler" }, SVG: {scale: 100, linebreaks: { automatic: "false" }, font: "Neo-Euler"}, NativeMML: {scale: 100}, TeX: { equationNumbers: {autoNumber: "AMS"}, MultLineWidth: "85%", TagSide: "left", TagIndent: ".8em" } });
+        </script>
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    </head>
+
+    <body>
+        <div id="content">
+            <h1 class="title">Prepatory Mathematics in the Age of Information</h1>
+            <div id="table-of-contents">
+                <h2>Table of Contents</h2>
+                <div id="text-table-of-contents">
+                    <ul>
+                        <li><a href="#orgheadline1">1. Introduction</a></li>
+                        <li><a href="#orgheadline2">2. A cautionary tale</a></li>
+                        <li><a href="#orgheadline3">3. <i>Pi</i> from an algorithmic standpoint</a></li>
+                        <li><a href="#orgheadline5">4. A Warm-up: Prime Factorization For Unlike Denominators</a>
+                            <ul>
+                                <li><a href="#orgheadline4">4.1. A bit of Algebra; Using <i>symbols</i> for primes.</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <script type="text/x-mathjax-config">
+                MathJax.Hub.Config({ TeX: {extensions: ["cancel.js"]}, tex2jax: { inlineMath: [ ['$','$'], ['\\(','\\)'] ], processEscapes: true } });
+            </script>
+
+
+            <div class="abstract">
+                <p>
+
+                </p>
+
+            </div>
+
+            <div id="outline-container-orgheadline1" class="outline-2">
+                <h2 id="orgheadline1"><span class="section-number-2">1</span> Introduction</h2>
+                <div class="outline-text-2" id="text-1">
+                    <p>
+                        Once upon a time the main customer of mathematics was the greater world of physics and engineering. While today's world is just as involved with physics and engineering as ever, we now find it necessary to broaden mathematics to include the world of computers and their unique approach to mathematics. Along with classic <i><a href="https://en.wikipedia.org/wiki/Mathematical_analysis">continuous</a></i> mathematics, computers have ushered in a new era of <i><a href="https://en.wikipedia.org/wiki/Discrete_mathematics">discrete</a></i> mathematics.
+                    </p>
+
+                    <p>
+                        Roughly speaking, <i>continuous</i> math is the math of things in motion, e.g., objects and their paths or trajectories, forces measured to the decimal place. In continuous math there is typically a <i>formula</i>. On the other hand, <i>discrete</i> math deals with separate, discrete entities, things are usually reoresented wuth integers, there are <i>systems</i> of finite, non-smoothly associated objects.
+                    </p>
+
+                    <p>
+                        <i>Discrete</i> mathematics is largely absent from the secondary school curriculum, and, except for <i><a href="https://en.wikipedia.org/wiki/Linear_algebra">linear algebra</a></i>, not emphasized in the first undergraduate years of college either. And yet theoretical computer science is all about discrete mathematics. An issue running parallel to the dearth of discrete math is the glaring absence of any cohesive approach to writing code for computers. Again, secondary education offers very little programming, and outside of computer science programs, college science curricula mostly follow a "catch as catch can" approach to learning to program. For example, when this author took numerical analysis from his math department, the professor offered no advice, let alone training, on how to do the programming assignments. Luckily, some of us stumbled onto FORTRAN and hacked together our assignments, mostly by guesswork.
+                    </p>
+
+                    <p>
+                        These deficiencies have been topics of discussion for many years. The first major breakthrough came in the mid 1980s from <a href="https://en.wikipedia.org/wiki/Gerald_Jay_Sussman">Gerald Sussman</a> and <a href="https://en.wikipedia.org/wiki/Hal_Abelson">Hal Abelson</a> at MIT with their landmark textbook <a href="https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs">Structure and Interpretation of Computer Programs</a>. Its nickname was <i>the wizard book</i> due to the wizardy-looking cartoon character on the cover. SICP served for many years as the text for their MIT Electrical Engineering and Computer Science course <i>6.001</i>. SICP was praised by critics as a nexus of computer theory and numerical application. However, its use of the <a href="https://en.wikipedia.org/wiki/Scheme_(programming_language)">Scheme</a> programming language, as well as its legendary "hard math" practice exercises doomed acceptance beyond any but the top university computer science programs.
+                    </p>
+
+                    <p>
+                        Today the importance of learning math on the computer cannot be emphasized enough, as nearly all real-world mathematics is done on computers. Gone are the days of slide rules, pocket calculators, log and trig tables, gone even are the days of mainframe computers chugging away in some remote clean room at FORTRAN numerical programs. Today's math is done as much on consumer-class computers with both free and commercial software, as on massively parallel super computers in clean rooms.
+                    </p>
+
+                    <p>
+                        This text aims to revolutionize the instruction of mathematics by including the computer and programming at each step. Math will be, first and foremost, in the context of the computer. <i>If you can code it, you own it</i> might be our motto. And to <i>code it</i> we'll be using the <i>SICP</i> standby Scheme, specifically the <i><a href="https://racket-lang.org/">Racket</a></i> dialect. (See Appendix [] for installation instructions, and Appendix [] for some basic skill-building.)
+                    </p>
+                </div>
+            </div>
+
+            <div id="outline-container-orgheadline2" class="outline-2">
+                <h2 id="orgheadline2"><span class="section-number-2">2</span> A cautionary tale</h2>
+                <div class="outline-text-2" id="text-2">
+                    <p>
+                        In regular math we see <i>functions</i>, expressions, equations. A function is a statement, an equation is a statement, a mathematical expression is also a statement of some mathematical relationship, hopefully accurate and true. Math builds, derives, juxtaposes functions, expressions, equations in order to get at some basic, fundamental truth of the matter at hand. With an equation like \(y = y_0e^{kt}\) we see a sort of <i>factory</i> that takes a thing \(y\) like a bacteria blob at an initial starting time \(t = 0\), that is, it's state at \(y_0\), and multiplies it by <a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">Euler's "magic" constant</a> \(e\) raised to the power of \(kt\), where \(t\) is time and \(k\) is a constant, i.e., \(e^{kt}\). What is this for? What does it do? Well, to begin answering this question many mathematics teachers would first want their students to know where the equation came from&#x2014;maybe not the whole historical rendition of when and who plucked it out of the <i>mathematical void</i>&#x2014;but students should see that it is <i>derived</i> using valid, mathematically-legal substitutions and simplifications from a more basic mathematical statement
+                    </p>
+
+                    \begin{align*} \frac{dy}{dt} = ky \end{align*}
+
+                    <p>
+                        . . . then the students see in on the test. And there the ball stops&#x2014;until some day they must use what is commonly known as the basic <i>exponential rate of growth or decay dependent on initial size</i> formula in a real-world setting&#x2014;invariably on a computer.
+                    </p>
+
+                    <p>
+                        <i>Kathy</i> is a new hire at a huge multi-national chemical engineering firm, and the last time she saw anything about exponential growth/decay was in her college Calculus course some four years ago. She only remembers plugging numbers into a hand calculator and writing down the answer on a test. But now her new boss wants her to do some growth factor calculations "<i>on the computer</i>". Not sure how to proceed, she asks around discreetly, to which someone says "<i>Oh, I think you could use</i> Excel <i>for that sort of thing.</i>"
+                    </p>
+
+                    <p>
+                        Googling, she <a href="http://www.excelfunctions.net/Excel-Growth-Function.html">finds a page</a> on an Excel exponential growth formula&#x2014;but it's in some unfamiliar computer code, and, on top of that, it doesn't look the same as the formula she dimly recalls from college. But she's got a <i>good head for math</i> and a strong desire to prove herself, so she keeps after it until something works and it looks right. She takes the printout to her boss . . . and he stares at it unsmiling, looking almost like he's been insulted. Finally he hands it back to her, saying "<i>Have Roy set you up a Matlab account</i>. Yes, sir. And so Roy, her unit's sysadmin, does so, but just as she begins to ask "<i>What do I do now?</i>" he hands her a five pound, two thousand-page Matlab manual. "<i>Study this</i>," he says, smirking, an eyebrow raised.
+                    </p>
+
+                    <p>
+                        The afternoon passes as she wades through the book's intro and partly into the first chapter, playing around with the first examples on her new Matlab account. But during lunch in the cafeteria, she overhears a group of colleges talking about <i>matrices</i>, then something called <i>Python</i>, then something called <i>Clojure</i>. She asks them to explain, and they say Matlab is good for some things, but other tasks are better done by just writing code. Oh.
+                    </p>
+
+                    <p>
+                        Later as she's at a restaurant with her friends, as they're talking about something on <i>YouTube</i>, she sighs and wishes she had seen some of this <i>numerical</i> stuff before being thrown into the shark tank. A bridge would have been nice between the world of school math&#x2014;with theories and practice problems from textbooks worked out with pencil, paper, and calculator&#x2014;and the proverbial deep end of the real world where everything seemed to revolve around computers and software. She realizes that she, with a good, solid Bachelors in math, must transform herself into a numerical analyst in no time flat.
+                    </p>
+
+                    <p>
+                        A textbook on numerical analysis tells her how math done on computers is all about finding strategies to approximate the nice, clean math of textbooks on the computers. In effect numerical mathematics is about finding formulas to actually use formulas. . .
+                    </p>
+                </div>
+            </div>
+
+            <div id="outline-container-orgheadline3" class="outline-2">
+                <h2 id="orgheadline3"><span class="section-number-2">3</span> <i>Pi</i> from an algorithmic standpoint</h2>
+                <div class="outline-text-2" id="text-3">
+                    <p>
+                        . . .for example, Kathy found out <i>pi</i>, the ratio of a circle's circumference and its diameter, can be derived in many ways. And even before the dawn of computers, numerical methods were used to get at a real solution to the basic \(\pi = \nicefrac{C}{d}\).
+                    </p>
+                </div>
+            </div>
+
+
+            <div id="outline-container-orgheadline5" class="outline-2">
+                <h2 id="orgheadline5"><span class="section-number-2">4</span> A Warm-up: Prime Factorization For Unlike Denominators</h2>
+                <div class="outline-text-2" id="text-4">
+                    <p>
+                        Seriously large denominators require the <i>prime factoring</i> method in order to get like-denominators.
+                    </p>
+
+                    <p>
+                        <i>Prime factorization</i> means <i>factoring out</i> the <i>prime numbers</i> of a number. For example:
+                    </p>
+
+                    <p>
+                        \(18 = 2(9)\) or \(18\) equals \(2\) times \(9\) (using Algebra notation for <i>times</i>)
+                    </p>
+
+                    <p>
+                        but \(9\) is not a prime number. So we must <i>factor</i> it:
+                    </p>
+
+                    <p>
+                        \(9 = 3(3)\)
+                    </p>
+
+                    <p>
+                        Now we can say \(18 = (2)(3)(3)\) (again, using Algebra notation for <i>times</i>) or, using <i>powers</i>, \(18 = 2(3^2)\) where \(3^2\) is the same as \(3\cdot3\) or \(3\) times \(3\).
+                    </p>
+
+                    <p>
+                        Before going any further, we should maybe talk about <i>prime numbers</i> or just <i>primes</i>. A prime is simply a number that has no possible factorization other than \(1\) and itself. So this table:
+                    </p>
+
+                    <table id="orgtable1" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+                        <colgroup>
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+
+                            <col class="org-right" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="org-right">2</td>
+                                <td class="org-right">3</td>
+                                <td class="org-right">5</td>
+                                <td class="org-right">7</td>
+                                <td class="org-right">11</td>
+                                <td class="org-right">13</td>
+                                <td class="org-right">17</td>
+                                <td class="org-right">19</td>
+                                <td class="org-right">23</td>
+                                <td class="org-right">29</td>
+                                <td class="org-right">31</td>
+                                <td class="org-right">37</td>
+                                <td class="org-right">41</td>
+                                <td class="org-right">43</td>
+                                <td class="org-right">47</td>
+                                <td class="org-right">53</td>
+                                <td class="org-right">59</td>
+                                <td class="org-right">61</td>
+                                <td class="org-right">67</td>
+                                <td class="org-right">71</td>
+                                <td class="org-right">73</td>
+                                <td class="org-right">79</td>
+                                <td class="org-right">83</td>
+                                <td class="org-right">89</td>
+                                <td class="org-right">97</td>
+                                <td class="org-right">101</td>
+                                <td class="org-right">103</td>
+                                <td class="org-right">107</td>
+                                <td class="org-right">109</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                        shows the first \(29\) primes. Again, nobody in this table is divisible by anything other than \(1\) and that number itself; no other numbers will divide into a prime number.
+                    </p>
+
+                    <p>
+                        When you think of numbers in terms of primes, any number is just a bunch of primes multiplied together&#x2014;sometimes repeatedly, e.g.,
+                    </p>
+
+                    \begin{align*} 38 & = (2)(18)\\ & = (2)(2)(9)\\ & = (2)(2)(3)(3)\\ \end{align*}
+                    <p>
+                        or
+                    </p>
+                    \begin{align*} 38 & = (2^2)(3^2) \end{align*}
+
+                    <p>
+                        So the prime factors of \(38\) are just the primes \(2\) and \(3\). We can now say the <i>factors of any number are just prime numbers</i>. Take a look at <a href="https://en.wikipedia.org/wiki/Table_of_prime_factors">this link</a> for a tables of the first \(1,000\) numbers as factors of primes.
+                    </p>
+                </div>
+
+                <div id="outline-container-orgheadline4" class="outline-3">
+                    <h3 id="orgheadline4"><span class="section-number-3">4.1</span> A bit of Algebra; Using <i>symbols</i> for primes.</h3>
+                    <div class="outline-text-3" id="text-4-1">
+                        <ul class="org-ul">
+                            <li>
+                                <p>
+                                    If we match the primes to letters, like <code>a, b, c</code>,
+                                </p>
+
+                                <table id="orgtable2" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+                                    <colgroup>
+                                        <col class="org-right" />
+
+                                        <col class="org-right" />
+
+                                        <col class="org-right" />
+
+                                        <col class="org-right" />
+
+                                        <col class="org-right" />
+
+                                        <col class="org-right" />
+
+                                        <col class="org-right" />
+
+                                        <col class="org-right" />
+
+                                        <col class="org-right" />
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="org-right">a</th>
+                                            <th scope="col" class="org-right">b</th>
+                                            <th scope="col" class="org-right">c</th>
+                                            <th scope="col" class="org-right">d</th>
+                                            <th scope="col" class="org-right">e</th>
+                                            <th scope="col" class="org-right">f</th>
+                                            <th scope="col" class="org-right">g</th>
+                                            <th scope="col" class="org-right">h</th>
+                                            <th scope="col" class="org-right">i</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="org-right">2</td>
+                                            <td class="org-right">3</td>
+                                            <td class="org-right">5</td>
+                                            <td class="org-right">7</td>
+                                            <td class="org-right">11</td>
+                                            <td class="org-right">13</td>
+                                            <td class="org-right">17</td>
+                                            <td class="org-right">19</td>
+                                            <td class="org-right">23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <p>
+                                    we can write the denominators of fractions like this:
+                                </p>
+
+                                <p>
+                                    \[ \frac{1}{85} \equiv \frac{1}{(5)(17)} \equiv \frac{1}{cg} \] where \(cg\) is (as above) \(c\) times \(g\). (&equiv; means equivalent or "the same as") And for another fraction
+                                </p>
+
+                                <p>
+                                    \[ \frac{1}{276} \equiv \frac{1}{(2^2)(3)(23)} \equiv \frac{1}{a^2bi} \]
+                                </p>
+
+                                <p>
+                                    As you can see, the <i>factors</i> in the denominator of both fractions are made up entirely of primes. Now we can pick a combination of these primes to make a <i>lowest common denominator</i>, which is a fancy way of saying the smallest denominator that both original denominators are some multiple of.
+                                </p>
+
+                                <p>
+                                    \[ \frac{1}{85} + \frac{1}{276} \quad \textrm{or} \quad \frac{1}{cg} + \frac{1}{a^2bi} \]
+                                </p>
+
+                                <p>
+                                    Broken down into their prime factors, we see that the two fractions have unique prime factors, i.e., they do not share any prime factors. This means a common denominator between the two must include <i>all</i> the prime factors <i>and</i> their powers:
+                                </p>
+
+                                <p>
+                                    \[ \frac{1}{cg} + \frac{1}{a^2bi} \equiv \frac{(1)(a^2bi) + (1)(cg)}{(cg)(a^2bi)} \]
+                                </p>
+
+                                <p>
+                                    If we substitute the original numbers back in. . .
+                                </p>
+
+                                <p>
+                                    \[ \frac{(1)(2^2)(3)(23) + (1)(5)(17)}{(5)(17)(2^2)(3)(23)} \]
+                                </p>
+
+                                <p>
+                                    By the way, this is the extreme condition where the common denominator cannot be anything less than simply multiplying the original denominators. Why? What happened? The two denominators&#x2014;when factored down to their respective prime factors&#x2014;had <i>nothing</i>, no primes, in commmon.
+                                </p>
+
+                                <p>
+                                    But what do we do with the numerators? We're not allowed to change the value of the fractions in our attempt to add them&#x2014;and we don't. And so we use an Algebra trick to keep the fractions the same value. The trick, of course, is multiplying something by \(1\), which, of course, doesn't change it:
+                                </p>
+
+                                <p>
+                                    \[ \bigg(\frac{1}{85}\bigg)\bigg(\frac{276}{276}\bigg) + \bigg(\frac{1}{276}\bigg)\bigg(\frac{85}{85}\bigg) \quad \textrm{or} \quad \bigg(\frac{1\cdot276}{85\cdot276}\bigg) + \bigg(\frac{1\cdot85}{276\cdot85}\bigg) \]
+                                </p>
+
+                                <p>
+                                    then
+                                </p>
+
+                                <p>
+                                    \[ \frac{(1)(276) + (1)(85)}{(85)(276)} = \frac{276 + 85}{23460} = \frac{361}{23460} \]
+                                </p>
+
+                                <p>
+                                    Let's look at something where the denominators might be large, but have more primes in common. How about
+                                </p>
+
+                                <p>
+                                    \[ \frac{1}{40} + \frac{1}{81} + \frac{1}{92} \quad \textrm{or} \quad \frac{1}{a^3c} + \frac{1}{b^4} + \frac{1}{a^2i} \quad \textrm{or} \quad \frac{1}{(2^3)(5)} + \frac{1}{3^4} + \frac{1}{(2^2)(23)} \]
+                                </p>
+
+                                <p>
+                                    here we see the primes \(2\), \(3\), \(5\), and \(23\) in use. Now we need to establish what the <i>lowest common denominator</i> (LCD) should be. The old <i>brute force</i> method of finding an LCD would be to simply multiply all the denominators together (\(40\) &sdot; \(81\) &sdot; \(92\)) and then multiply the numerators by whatever was need to keep it honest. We, however, don't need such <i>mathématiques brutale</i>. We're clever enough to sense that if a prime in one denominator is also found in another denominator, <i>we can simply disregard the lesser power of that prime and use the greater power to build our LCD.</i> Our example has just such a situation. Notice above that we have the prime \(2\) in both \(\frac{1}{40}\) and in \(\frac{1}{92}\). Notice also that \(\frac{1}{40}\) has \(2^3\) while \(\frac{1}{92}\) has just \(2^2\). The beauty of the <b>prime factorization</b> method is that we can throw out the lesser power (here \(2^2\)) and build our LCD out of the greater power \(2^3\)
+                                </p>
+
+                                <p>
+                                    \[ \frac{1}{(2^3)(5)} + \frac{1}{3^4} + \frac{1}{\cancel{(2^2)}(23)} \]
+                                </p>
+
+                                <p>
+                                    so now our denominator will be made up what we might call the <i>significant</i> or <i>principle</i> primes: \((2^3)(3^4)(5)(23)\) or \(74,520\). Still <i>ugly</i>-big, but smaller by the factor of \(2^2\) we were able to drop, i.e., \(74,520\) &lt; \(298,080\) by a <i>factor</i> (note the common English use of <i>factor</i>) of \(4\). Now, getting the numerators right will simply be the Algebra trick of multiplying each fraction by a version of \(1\), i.e., not changing its actual value, but making each fraction have like-denominators so we may add them. Again, in order to transform \(\frac{1}{40}\) into a version with our LCD \(74,520\), then \(\frac{1}{81}\), lastly, \(\frac{1}{92}\), we multiply each by a different version of \(1\), in the form of \(\frac{a}{a}\) where \(a\) is that number, which, when multiplied by the fraction's denominator, will give the LCD, in this case \(74,520\):
+                                </p>
+
+                                <p>
+                                    \[ \bigg(\frac{(3^4)(23)}{(3^4)(23)}\bigg)\bigg(\frac{1}{40}\bigg) + \bigg(\frac{(2^3)(5)(23)}{(2^3)(5)(23)}\bigg)\bigg(\frac{1}{81}\bigg) + \bigg(\frac{(2)(3^4)(5)}{(2)(3^4)(5)}\bigg)\bigg(\frac{1}{92}\bigg) \]
+                                </p>
+
+                                <p>
+                                    or
+                                </p>
+
+                                <p>
+                                    \[ \bigg(\frac{1863}{1863}\bigg)\bigg(\frac{1}{40}\bigg) + \bigg(\frac{920}{920}\bigg)\bigg(\frac{1}{81}\bigg) + \bigg(\frac{810}{810}\bigg)\bigg(\frac{1}{92}\bigg) \]
+                                </p>
+
+                                <p>
+                                    or
+                                </p>
+
+                                <p>
+                                    \[ \frac{1863}{74520} + \frac{920}{74520} + \frac{810}{74520} = \frac{3593}{74520} \]
+                                </p>
+
+                                <p>
+                                    Note, we multiply each fraction by the factors the fraction's denominator doesn't contain. So with \(\frac{1}{92}\), which contributed \(2^2\) and \(23\) to the LCD, we make the \(\frac{something}{something}\)
+                                </p>
+
+                                <p>
+                                    Another way to figure out the numerators&#x2014;or what we should multiply each fraction's numerator by&#x2014;is to simply divide the LCD by the original denominator, e.g., for \(\frac{1}{40}\) we have \(74,520 \div 40 = 1,863\), and yes, \(1,863\) is the same answer as before, i.e., we multiply \(\frac{1}{40}\) by \(\frac{1863}{1863}\) to get \(\frac{1}{40}\) represented in terms of our LCD.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="postamble" class="status">
+            <p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">[2015-10-06 Tue 14:32]</span></span>
+            </p>
+            <p class="author">Author: teilchen010</p>
+            <p class="date">Created: 2016-02-08 Mon 21:01</p>
+            <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+        </div>
+    </body>
+
+    </html>
