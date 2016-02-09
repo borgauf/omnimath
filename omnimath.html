@@ -4,7 +4,7 @@
     <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
     <head>
-        <!-- 2016-02-08 Mon 21:01 -->
+        <!-- 2016-02-09 Tue 19:39 -->
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Prepatory Mathematics in the Age of Information</title>
@@ -337,15 +337,15 @@
                 <h2 id="orgheadline1"><span class="section-number-2">1</span> Introduction</h2>
                 <div class="outline-text-2" id="text-1">
                     <p>
-                        Once upon a time the main customer of mathematics was the greater world of physics and engineering. While today's world is just as involved with physics and engineering as ever, we now find it necessary to broaden mathematics to include the world of computers and their unique approach to mathematics. Along with classic <i><a href="https://en.wikipedia.org/wiki/Mathematical_analysis">continuous</a></i> mathematics, computers have ushered in a new era of <i><a href="https://en.wikipedia.org/wiki/Discrete_mathematics">discrete</a></i> mathematics.
+                        Once upon a time the main customer of mathematics was the greater world of physics and engineering. While in today's world math is just as involved with physics and engineering as ever, we now find it necessary to broaden mathematics to include the world of computers and their unique approach to mathematics. Along with classic <i><a href="https://en.wikipedia.org/wiki/Mathematical_analysis">continuous</a></i> mathematics, computers have ushered in a new era of <i><a href="https://en.wikipedia.org/wiki/Discrete_mathematics">discrete</a></i> mathematics.
                     </p>
 
                     <p>
-                        Roughly speaking, <i>continuous</i> math is the math of things in motion, e.g., objects and their paths or trajectories, forces measured to the decimal place. In continuous math there is typically a <i>formula</i>. On the other hand, <i>discrete</i> math deals with separate, discrete entities, things are usually reoresented wuth integers, there are <i>systems</i> of finite, non-smoothly associated objects.
+                        Roughly speaking, <i>continuous</i> math is the math of things in motion, e.g., objects and their paths or trajectories, forces measured to the decimal place. In continuous math there is typically a <i>formula</i>. On the other hand, <i>discrete</i> math deals with separate, <i>discrete</i> entities, things are usually reoresented with integers, there are <i>systems</i> of finite, non-smoothly associated objects.
                     </p>
 
                     <p>
-                        <i>Discrete</i> mathematics is largely absent from the secondary school curriculum, and, except for <i><a href="https://en.wikipedia.org/wiki/Linear_algebra">linear algebra</a></i>, not emphasized in the first undergraduate years of college either. And yet theoretical computer science is all about discrete mathematics. An issue running parallel to the dearth of discrete math is the glaring absence of any cohesive approach to writing code for computers. Again, secondary education offers very little programming, and outside of computer science programs, college science curricula mostly follow a "catch as catch can" approach to learning to program. For example, when this author took numerical analysis from his math department, the professor offered no advice, let alone training, on how to do the programming assignments. Luckily, some of us stumbled onto FORTRAN and hacked together our assignments, mostly by guesswork.
+                        <i>Discrete</i> mathematics is largely absent from the secondary school curriculum, and, except for <i><a href="https://en.wikipedia.org/wiki/Linear_algebra">linear algebra</a></i>, not emphasized in the first undergraduate years of college either. And yet theoretical computer science is all about discrete mathematics. An issue running parallel to the dearth of discrete math is the glaring absence of any cohesive approach to programming computers. Again, secondary education offers very little programming, and outside of computer science programs, college science curricula mostly follow a "catch as catch can" approach to learning to program. For example, when this author took numerical analysis from his math department, the professor offered no advice&#x2014;let alone training&#x2014;on how to do the programming assignments. Luckily, some of us stumbled onto <a href="https://en.wikipedia.org/wiki/Fortran">FORTRAN</a> and hacked together our assignments, mostly by guesswork.
                     </p>
 
                     <p>
@@ -366,13 +366,13 @@
                 <h2 id="orgheadline2"><span class="section-number-2">2</span> A cautionary tale</h2>
                 <div class="outline-text-2" id="text-2">
                     <p>
-                        In regular math we see <i>functions</i>, expressions, equations. A function is a statement, an equation is a statement, a mathematical expression is also a statement of some mathematical relationship, hopefully accurate and true. Math builds, derives, juxtaposes functions, expressions, equations in order to get at some basic, fundamental truth of the matter at hand. With an equation like \(y = y_0e^{kt}\) we see a sort of <i>factory</i> that takes a thing \(y\) like a bacteria blob at an initial starting time \(t = 0\), that is, it's state at \(y_0\), and multiplies it by <a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">Euler's "magic" constant</a> \(e\) raised to the power of \(kt\), where \(t\) is time and \(k\) is a constant, i.e., \(e^{kt}\). What is this for? What does it do? Well, to begin answering this question many mathematics teachers would first want their students to know where the equation came from&#x2014;maybe not the whole historical rendition of when and who plucked it out of the <i>mathematical void</i>&#x2014;but students should see that it is <i>derived</i> using valid, mathematically-legal substitutions and simplifications from a more basic mathematical statement
+                        In regular math we see <i>functions</i>, expressions, equations. A function is a statement, an equation is a statement, a mathematical expression is also a statement of some mathematical relationship, hopefully accurate and true. Math builds, derives, juxtaposes functions, expressions, equations in order to get at some basic, fundamental truth of the matter at hand. With an equation like \(y = y_0e^{kt}\) we see a <i>factory</i> of sorts that takes a thing \(y\), perhaps a bacteria blob, at an initial starting time \(t = 0\), that is, it's state at \(y_0\), and multiplies it by <a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">Euler's "magic" constant</a> \(e\) raised to the power of \(kt\), where \(t\) is time and \(k\) is a constant, i.e., \(e^{kt}\). What is this for? What does it do? Well, to begin answering this question many mathematics teachers would first want their students to know where the equation came from&#x2014;maybe not the whole historical rendition of when and who plucked it out of the <i>mathematical void</i>&#x2014;but students should see that it is <i>derived</i> using valid, mathematically-legal substitutions and simplifications from a more basic mathematical statement
                     </p>
 
                     \begin{align*} \frac{dy}{dt} = ky \end{align*}
 
                     <p>
-                        . . . then the students see in on the test. And there the ball stops&#x2014;until some day they must use what is commonly known as the basic <i>exponential rate of growth or decay dependent on initial size</i> formula in a real-world setting&#x2014;invariably on a computer.
+                        . . . then the students do some homework problems, and maybe see in on a test. And there the ball stops&#x2014;until a day comes when they must use the <i>exponential rate of growth or decay dependent on initial size</i> formula in a real-world setting&#x2014;invariably on a computer.
                     </p>
 
                     <p>
@@ -384,7 +384,7 @@
                     </p>
 
                     <p>
-                        The afternoon passes as she wades through the book's intro and partly into the first chapter, playing around with the first examples on her new Matlab account. But during lunch in the cafeteria, she overhears a group of colleges talking about <i>matrices</i>, then something called <i>Python</i>, then something called <i>Clojure</i>. She asks them to explain, and they say Matlab is good for some things, but other tasks are better done by just writing code. Oh.
+                        The afternoon passes as she wades through the book's intro and partly into the first chapter, playing around with the first examples on her new Matlab account. But during lunch in the cafeteria, she overhears a group of colleagues talking about <i>matrices</i>, then something called <i>Python</i>, then something called <i>Clojure</i>. She asks them to explain, and they say Matlab is good for some things, but their group is "writing applications." Oh.
                     </p>
 
                     <p>
@@ -726,7 +726,7 @@
             <p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">[2015-10-06 Tue 14:32]</span></span>
             </p>
             <p class="author">Author: teilchen010</p>
-            <p class="date">Created: 2016-02-08 Mon 21:01</p>
+            <p class="date">Created: 2016-02-09 Tue 19:39</p>
             <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
         </div>
     </body>
