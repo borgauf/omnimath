@@ -1,0 +1,37 @@
+\documentclass[border=10pt]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{
+  graphs,
+  graphdrawing,
+  shapes.multipart
+}
+\usegdlibrary{trees}
+
+\tikzset{
+  link/.style={
+    rectangle split,
+    rectangle split horizontal,
+    rectangle split parts=2,
+    draw,
+    align=center,
+    /tikz/graphs/as={\nodepart{two} \footnotesize\texttt{ptr}},
+  }
+}
+
+\begin{document}
+\tikz \graph [tree layout] {
+  head [draw, as=\emph{head}] -- {
+     link1 [link] -- {
+       1, 
+       link2 [link] -- {
+         2, 
+         link3 [link] -- {
+           3, 
+           link4 [link]
+         }
+       }
+     }
+  }
+};
+\end{document}

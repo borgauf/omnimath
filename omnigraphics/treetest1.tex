@@ -1,0 +1,23 @@
+% A simple Tree
+% Author: Stefan Kottwitz
+% https://www.packtpub.com/hardware-and-creative/latex-cookbook
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{calc,shapes.multipart,chains,arrows}
+
+\begin{document}
+\begin{tikzpicture}[sibling distance=10em,
+  every node/.style = {shape=rectangle, draw, align=center,
+    top color=white, bottom color=blue!20}]]
+  \node {  |  }
+    child { node {1} }
+    child { node {    |    }
+      child { node {2}
+        child { node {relation sign} }
+        child { node {several places} }
+        child { node {center} } }
+      child { node {    |    } } };
+\end{tikzpicture}
+\end{document}
+
+

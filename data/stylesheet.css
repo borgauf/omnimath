@@ -8,7 +8,7 @@
 
 @media all and (min-width: 1000px) {
     body {
-        max-width: 60%;
+        max-width: 46%;
         margin: auto;
     }
 }
@@ -20,8 +20,9 @@
 }
 
 body {
-    font-family: "dejavu_sans_monobook", serif, Arial, sans-serif;
-    font-size: 0.85em
+    font-family: georgia, "dejavu_sans_monobook", serif, Arial, sans-serif;
+    font-size: 1.1em;
+    line-height: 1.5em;
 }
 
 @media all and (min-width: 1000px) {
@@ -74,6 +75,7 @@ body {
 .title {
     text-align: left;
     font-size: 1.5em;
+    line-height: 1.50em;
     /*margin-left: 310px;
     border-bottom-style: solid;
     border-bottom-color: lightgray;*/
@@ -83,9 +85,14 @@ body {
 /* #table-of-contents {
   margin-left: 310px; } */
 
-li {
-    font-size: 0.85em;
-}
+
+/* li { */
+
+
+/*     font-size: 0.85em; */
+
+
+/* } */
 
 #table-of-contents h2 {
     display: none;
@@ -107,7 +114,7 @@ h2,
 h3,
 h4 {
     font-weight: 200;
-    letter-spacing: .25em;
+    letter-spacing: .1em;
 }
 
 h2,
@@ -167,4 +174,14 @@ blockquote {
     text-align: center;
     font-size: 8pt;
     max-width: 75%;
+}
+
+pre {
+    border: none;
+    box-shadow: none;
+    font-size: 1.1em;
+}
+
+pre.src {
+    margin-left: 58px;
 }

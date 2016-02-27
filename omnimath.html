@@ -4,10 +4,10 @@
     <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
     <head>
-        <!-- 2016-02-09 Tue 19:39 -->
+        <!-- 2016-02-27 Sat 19:15 -->
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Prepatory Mathematics in the Age of Information</title>
+        <title>Prepatory Mathematics in the Age of Information Chapter One</title>
         <meta name="generator" content="Org-mode" />
         <meta name="author" content="teilchen010" />
         <style type="text/css">
@@ -305,17 +305,20 @@
 
     <body>
         <div id="content">
-            <h1 class="title">Prepatory Mathematics in the Age of Information</h1>
+            <h1 class="title">Prepatory Mathematics in the Age of Information Chapter One</h1>
             <div id="table-of-contents">
                 <h2>Table of Contents</h2>
                 <div id="text-table-of-contents">
                     <ul>
                         <li><a href="#orgheadline1">1. Introduction</a></li>
-                        <li><a href="#orgheadline2">2. A cautionary tale</a></li>
-                        <li><a href="#orgheadline3">3. <i>Pi</i> from an algorithmic standpoint</a></li>
-                        <li><a href="#orgheadline5">4. A Warm-up: Prime Factorization For Unlike Denominators</a>
+                        <li><a href="#orgheadline2">2. The so-called real-world</a></li>
+                        <li><a href="#orgheadline3">3. Introducing Kathy</a></li>
+                        <li><a href="#orgheadline4">4. SICP</a></li>
+                        <li><a href="#orgheadline5">5. Algorithms</a></li>
+                        <li><a href="#orgheadline6">6. <i>Pi</i> from an algorithmic standpoint</a></li>
+                        <li><a href="#orgheadline8">7. A Warm-up: Prime Factorization For Unlike Denominators</a>
                             <ul>
-                                <li><a href="#orgheadline4">4.1. A bit of Algebra; Using <i>symbols</i> for primes.</a></li>
+                                <li><a href="#orgheadline7">7.1. A bit of Algebra; Using <i>symbols</i> for primes.</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -323,6 +326,10 @@
             </div>
             <script type="text/x-mathjax-config">
                 MathJax.Hub.Config({ TeX: {extensions: ["cancel.js"]}, tex2jax: { inlineMath: [ ['$','$'], ['\\(','\\)'] ], processEscapes: true } });
+            </script>
+
+            <script type="text/x-mathjax-config">
+                MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () { var MML = MathJax.ElementJax.mml, TEX = MathJax.InputJax.TeX; TEX.Definitions.macros.bfrac = "myBevelFraction"; TEX.Parse.Augment({ myBevelFraction: function (name) { var num = this.ParseArg(name), den = this.ParseArg(name); this.Push(MML.mfrac(num,den).With({bevelled: true})); } }); });
             </script>
 
 
@@ -337,7 +344,7 @@
                 <h2 id="orgheadline1"><span class="section-number-2">1</span> Introduction</h2>
                 <div class="outline-text-2" id="text-1">
                     <p>
-                        Once upon a time the main customer of mathematics was the greater world of physics and engineering. While in today's world math is just as involved with physics and engineering as ever, we now find it necessary to broaden mathematics to include the world of computers and their unique approach to mathematics. Along with classic <i><a href="https://en.wikipedia.org/wiki/Mathematical_analysis">continuous</a></i> mathematics, computers have ushered in a new era of <i><a href="https://en.wikipedia.org/wiki/Discrete_mathematics">discrete</a></i> mathematics.
+                        Once upon a time the main customer of mathematics was the greater world of physics and engineering. While math is just as involved with physics and engineering as ever, we now find it necessary to consider computers and their unique approach to mathematics. Along with classic <i><a href="https://en.wikipedia.org/wiki/Mathematical_analysis">continuous</a></i> mathematics, computers have ushered in a new era of <i><a href="https://en.wikipedia.org/wiki/Discrete_mathematics">discrete</a></i> mathematics.
                     </p>
 
                     <p>
@@ -345,71 +352,365 @@
                     </p>
 
                     <p>
-                        <i>Discrete</i> mathematics is largely absent from the secondary school curriculum, and, except for <i><a href="https://en.wikipedia.org/wiki/Linear_algebra">linear algebra</a></i>, not emphasized in the first undergraduate years of college either. And yet theoretical computer science is all about discrete mathematics. An issue running parallel to the dearth of discrete math is the glaring absence of any cohesive approach to programming computers. Again, secondary education offers very little programming, and outside of computer science programs, college science curricula mostly follow a "catch as catch can" approach to learning to program. For example, when this author took numerical analysis from his math department, the professor offered no advice&#x2014;let alone training&#x2014;on how to do the programming assignments. Luckily, some of us stumbled onto <a href="https://en.wikipedia.org/wiki/Fortran">FORTRAN</a> and hacked together our assignments, mostly by guesswork.
+                        <i>Discrete</i> mathematics is largely absent from the American secondary school curriculum, and, except for <i><a href="https://en.wikipedia.org/wiki/Linear_algebra">linear algebra</a></i>, not emphasized in the first undergraduate years of American college either. And yet theoretical computer science is mainly about discrete mathematics. An issue running parallel to the dearth of discrete math is the glaring absence of any cohesive approach to programming computers. Again, secondary education offers very little programming, and outside of computer science programs, college science curricula mostly follow a "catch as catch can" approach to learning to program. For example, when this author took numerical analysis from his math department (1985), the professor offered no advice&#x2014;let alone training&#x2014;on how to do the programming assignments. Luckily, some of us stumbled onto <a href="https://en.wikipedia.org/wiki/Fortran">FORTRAN</a> and hacked together our assignments, mostly by guesswork . . . and things haven't changed much in the last thirty years.
                     </p>
 
                     <p>
-                        These deficiencies have been topics of discussion for many years. The first major breakthrough came in the mid 1980s from <a href="https://en.wikipedia.org/wiki/Gerald_Jay_Sussman">Gerald Sussman</a> and <a href="https://en.wikipedia.org/wiki/Hal_Abelson">Hal Abelson</a> at MIT with their landmark textbook <a href="https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs">Structure and Interpretation of Computer Programs</a>. Its nickname was <i>the wizard book</i> due to the wizardy-looking cartoon character on the cover. SICP served for many years as the text for their MIT Electrical Engineering and Computer Science course <i>6.001</i>. SICP was praised by critics as a nexus of computer theory and numerical application. However, its use of the <a href="https://en.wikipedia.org/wiki/Scheme_(programming_language)">Scheme</a> programming language, as well as its legendary "hard math" practice exercises doomed acceptance beyond any but the top university computer science programs.
+                        These deficiencies have been topics of discussion for many years. The first major breakthrough came in the late 1980s from <a href="https://en.wikipedia.org/wiki/Gerald_Jay_Sussman">Gerald Sussman</a> and <a href="https://en.wikipedia.org/wiki/Hal_Abelson">Hal Abelson</a> at MIT with their landmark textbook <i>Structure and Interpretation of Computer Programs</i><sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>. Its nickname was <i>the wizard book</i> due to the wizardy-looking cartoon character on the cover. SICP served for many years as the text for their MIT Electrical Engineering and Computer Science course <i><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/">6.001</a></i>. SICP was praised by many as a nexus of computer theory and numerical application. However, its use of the <a href="https://en.wikipedia.org/wiki/Scheme_(programming_language)">Scheme</a> programming language, as well as its legendary "hard math" practice exercises doomed acceptance beyond any but the world's top university computer science programs.
                     </p>
 
                     <p>
-                        Today the importance of learning math on the computer cannot be emphasized enough, as nearly all real-world mathematics is done on computers. Gone are the days of slide rules, pocket calculators, log and trig tables, gone even are the days of mainframe computers chugging away in some remote clean room at FORTRAN numerical programs. Today's math is done as much on consumer-class computers with both free and commercial software, as on massively parallel super computers in clean rooms.
+                        Today the importance of learning math on the computer cannot be emphasized enough, as nearly all real-world mathematics is done on computers. Gone are the days of slide rules, pocket calculators, log and trig tables, gone even are the days of mainframe computers chugging away in some remote clean room at FORTRAN numerical programs. Today's math is done as much on consumer-class computers (like yours and mine) with both free and commercial software, as on massively parallel super computers in clean rooms.
                     </p>
 
                     <p>
-                        This text aims to revolutionize the instruction of mathematics by including the computer and programming at each step. Math will be, first and foremost, in the context of the computer. <i>If you can code it, you own it</i> might be our motto. And to <i>code it</i> we'll be using the <i>SICP</i> standby Scheme, specifically the <i><a href="https://racket-lang.org/">Racket</a></i> dialect. (See Appendix [] for installation instructions, and Appendix [] for some basic skill-building.)
+                        This text aims to be an aid to the instruction of basic mathematics by including the computer and programming at each step. Math will be, first and foremost, in the context of the computer. <i>If you can code it, you own it</i> might be our motto. And to <i>code it</i> we'll be using the <i>SICP</i> standby Scheme, specifically the <i><a href="https://racket-lang.org/">Racket</a></i> dialect. (See Appendix [] for installation instructions, and Appendix [] for some basic skill-building.)
                     </p>
                 </div>
             </div>
 
             <div id="outline-container-orgheadline2" class="outline-2">
-                <h2 id="orgheadline2"><span class="section-number-2">2</span> A cautionary tale</h2>
+                <h2 id="orgheadline2"><span class="section-number-2">2</span> The so-called real-world</h2>
                 <div class="outline-text-2" id="text-2">
                     <p>
-                        In regular math we see <i>functions</i>, expressions, equations. A function is a statement, an equation is a statement, a mathematical expression is also a statement of some mathematical relationship, hopefully accurate and true. Math builds, derives, juxtaposes functions, expressions, equations in order to get at some basic, fundamental truth of the matter at hand. With an equation like \(y = y_0e^{kt}\) we see a <i>factory</i> of sorts that takes a thing \(y\), perhaps a bacteria blob, at an initial starting time \(t = 0\), that is, it's state at \(y_0\), and multiplies it by <a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">Euler's "magic" constant</a> \(e\) raised to the power of \(kt\), where \(t\) is time and \(k\) is a constant, i.e., \(e^{kt}\). What is this for? What does it do? Well, to begin answering this question many mathematics teachers would first want their students to know where the equation came from&#x2014;maybe not the whole historical rendition of when and who plucked it out of the <i>mathematical void</i>&#x2014;but students should see that it is <i>derived</i> using valid, mathematically-legal substitutions and simplifications from a more basic mathematical statement
+                        In regular math we see <i><a href="https://en.wikipedia.org/wiki/Function_(mathematics)">functions</a></i>, expressions, equations. A function is a statement, an equation is a statement, a mathematical expression is also a statement of some mathematical relationship, hopefully accurate and true. Math builds, derives, juxtaposes functions, expressions, equations to get at some basic, fundamental truth of the matter at hand. With an equation like \(y = y_0e^{kt}\) we see a factory:
+                    </p>
+
+
+                    <div class="figure">
+                        <p><img src="./omnigraphics/500px-Function_machine2.svg.png" alt="500px-Function_machine2.svg.png" />
+                        </p>
+                        <p><span class="figure-number">Figure 1:</span> Courtesy of <a href="https://commons.wikimedia.org/wiki/File:Function_machine2.svg">Wikimedia Commons</a></p>
+                    </div>
+
+                    <p>
+                        of sorts that takes a thing \(y\), perhaps a bacteria blob, at an initial starting time \(t = 0\), that is, the blob's state at \(y_0\), and multiplies it by <a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">Euler's "magic" constant</a> \(e\) raised to the power of \(kt\), where \(t\) is time and \(k\) is a constant, i.e., \(e^{kt}\). What is this for? What does it do? Well, to begin answering this question many mathematics teachers would first want their students to know where the equation came from&#x2014;maybe not the whole historical rendition of when and who plucked it out of the <i>mathematical void</i>&#x2014;but students should see that it is <i>derived</i> using valid, mathematically-legal substitutions and simplifications from a more basic mathematical statement
                     </p>
 
                     \begin{align*} \frac{dy}{dt} = ky \end{align*}
 
                     <p>
-                        . . . then the students do some homework problems, and maybe see in on a test. And there the ball stops&#x2014;until a day comes when they must use the <i>exponential rate of growth or decay dependent on initial size</i> formula in a real-world setting&#x2014;invariably on a computer.
-                    </p>
-
-                    <p>
-                        <i>Kathy</i> is a new hire at a huge multi-national chemical engineering firm, and the last time she saw anything about exponential growth/decay was in her college Calculus course some four years ago. She only remembers plugging numbers into a hand calculator and writing down the answer on a test. But now her new boss wants her to do some growth factor calculations "<i>on the computer</i>". Not sure how to proceed, she asks around discreetly, to which someone says "<i>Oh, I think you could use</i> Excel <i>for that sort of thing.</i>"
-                    </p>
-
-                    <p>
-                        Googling, she <a href="http://www.excelfunctions.net/Excel-Growth-Function.html">finds a page</a> on an Excel exponential growth formula&#x2014;but it's in some unfamiliar computer code, and, on top of that, it doesn't look the same as the formula she dimly recalls from college. But she's got a <i>good head for math</i> and a strong desire to prove herself, so she keeps after it until something works and it looks right. She takes the printout to her boss . . . and he stares at it unsmiling, looking almost like he's been insulted. Finally he hands it back to her, saying "<i>Have Roy set you up a Matlab account</i>. Yes, sir. And so Roy, her unit's sysadmin, does so, but just as she begins to ask "<i>What do I do now?</i>" he hands her a five pound, two thousand-page Matlab manual. "<i>Study this</i>," he says, smirking, an eyebrow raised.
-                    </p>
-
-                    <p>
-                        The afternoon passes as she wades through the book's intro and partly into the first chapter, playing around with the first examples on her new Matlab account. But during lunch in the cafeteria, she overhears a group of colleagues talking about <i>matrices</i>, then something called <i>Python</i>, then something called <i>Clojure</i>. She asks them to explain, and they say Matlab is good for some things, but their group is "writing applications." Oh.
-                    </p>
-
-                    <p>
-                        Later as she's at a restaurant with her friends, as they're talking about something on <i>YouTube</i>, she sighs and wishes she had seen some of this <i>numerical</i> stuff before being thrown into the shark tank. A bridge would have been nice between the world of school math&#x2014;with theories and practice problems from textbooks worked out with pencil, paper, and calculator&#x2014;and the proverbial deep end of the real world where everything seemed to revolve around computers and software. She realizes that she, with a good, solid Bachelors in math, must transform herself into a numerical analyst in no time flat.
-                    </p>
-
-                    <p>
-                        A textbook on numerical analysis tells her how math done on computers is all about finding strategies to approximate the nice, clean math of textbooks on the computers. In effect numerical mathematics is about finding formulas to actually use formulas. . .
+                        . . . then the students do some homework problems, and maybe see in on a test. And there the ball stops&#x2014;until a day comes when one of them must use the <i>exponential rate of growth or decay dependent on initial size</i> formula in a real-world setting&#x2014;invariably on a computer; invariably in a much messier situation than the Calculus text problem set.
                     </p>
                 </div>
             </div>
 
             <div id="outline-container-orgheadline3" class="outline-2">
-                <h2 id="orgheadline3"><span class="section-number-2">3</span> <i>Pi</i> from an algorithmic standpoint</h2>
+                <h2 id="orgheadline3"><span class="section-number-2">3</span> Introducing Kathy</h2>
                 <div class="outline-text-2" id="text-3">
                     <p>
-                        . . .for example, Kathy found out <i>pi</i>, the ratio of a circle's circumference and its diameter, can be derived in many ways. And even before the dawn of computers, numerical methods were used to get at a real solution to the basic \(\pi = \nicefrac{C}{d}\).
+                        Let us introduce <i>Kathy</i>, fresh out of college with a Masters in math and now a new hire at a huge multi-national chemical engineering firm. The last time Kathy saw anything about exponential growth/decay was in her college Calculus course some four years ago. She only remembers plugging numbers into a calculator and writing down the answer on a test. But now her new boss wants her to do some growth factor calculations "<i>on the computer</i>". Not sure how to proceed, she asks around discreetly, to which someone says "<i>Oh, I think you could use</i> Excel <i>for that sort of thing.</i>"
+                    </p>
+
+                    <p>
+                        Googling, she <a href="http://www.excelfunctions.net/Excel-Growth-Function.html">finds a page</a> on an Excel exponential growth formula&#x2014;but it's done in some computer code, and, on top of that, it doesn't look the same as the formula she dimly recalls from college. But she's got a good head for math and a strong desire to prove herself, so she keeps after it until something works and it looks right. She takes the printout to her boss . . . and he stares at it unsmiling, looking almost like he's been insulted. Finally he hands it back to her, saying /"Have Roy set you up a <a href="https://en.wikipedia.org/wiki/MATLAB">MATLAB</a> account."/ Yes, sir. And so Roy, her unit's sysadmin, dutifully installs said software. But just as she begins to ask "<i>What do I do now?</i>" he hands her a three pound MATLAB manual. "<i>Study this</i>," he says, smirking, an eyebrow raised.
+                    </p>
+
+                    <p>
+                        The afternoon passes as she wades through the book's intro and first chapter, playing around with the examples on her new MATLAB account. But during lunch in the cafeteria, she overhears a group of colleagues talking about <i>matrices</i>, then something called <i>Python</i>, then something called <i>Clojure</i>. She asks them to explain, and they say MATLAB is good for some things, but their group is "writing applications." Oh.
+                    </p>
+
+                    <p>
+                        Later, as she's at a restaurant with her friends, as they're talking about something on <i>YouTube</i>, she sighs and wishes she had seen some of this <i>numerical</i> stuff before being thrown into the shark tank. Some sort of bridge would have been nice between the world of school math&#x2014;with theories and practice problems from textbooks worked out with pencil, paper, and calculator&#x2014;and the proverbial deep end of the real world where everything seemed to revolve around computers and software. She realizes that she must transform herself into a <i>numerical analyst</i> in no time flat.
+                    </p>
+
+                    <p>
+                        Later that night, about two chapters into an online <i>Numerical Analysis</i> textbook, she surmises the whole point is to find strategies to <i>translate</i> the nice, clean math of her textbooks into forms that can be carried out on computers. In effect, numerical methods are formulas to apply formulas. . . .
+                    </p>
+                </div>
+            </div>
+
+            <div id="outline-container-orgheadline4" class="outline-2">
+                <h2 id="orgheadline4"><span class="section-number-2">4</span> SICP</h2>
+                <div class="outline-text-2" id="text-4">
+                    <p>
+                        An online search led her to something called the <a href="https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs">Structure and Interpretation of Computer Programs</a>, which, as she learned, was both a book and a course at MIT. She eventually found a nice creative commons <a href="http://sarabander.github.io/sicp/">online version</a> of the text and started reading.
+                    </p>
+
+                    <p>
+                        If numerical analysis was about turning math concepts into workable methods, then SICP was about turning those methods into computer code. The authors Sussman and Abelson presented the <i><a href="https://en.wikipedia.org/wiki/Functional_programming">functional</a></i> programming language <i>Scheme</i> as the most natural fit for turning mathematical methods into code. As she Googled <i>functional programming</i>, various sources said the functional style was in numerical application preferrable to the <i>imperative</i> style, mainly because imperative coding was apt to be too verbose in the translation of task into actual code, while functional coding stayed closer to mathematics by mimicking the actual functions.
+                    </p>
+
+                    <p>
+                        One particular sticking point about imperative programming seemed to be how an equation like \(x = 2\) was not really an equation in the math sense, but more about storing \(2\) in a place in computer memory referred to as \(x\). And why is that a problem? If \(x = 2\) is not a true mathematical statement, rather a statement about storage, an imperative program might later reassign \(x\) to "equal" something else&#x2014;which, of course, violates the idea of what \(x\) really is&#x2014;at least mathematically-speaking . . . she wasn't really sure why that was such a big deal, but she read on.
+                    </p>
+
+                    <p>
+                        The first chapter seemed to be reproducing with Scheme code much of what a basic pocket calculator does. She had briefly seen the programming language <i>C</i> in a beginning computer science course, but dropped it (and forgot about a comp-sci minor as well) after getting totally frustrated with how much time and effort it took to do the simplest things. Rules, rules, rules! But what she now saw was nothing like C. Functions were built as <i>lists</i> of nested parentheses. Apparently, Scheme was a derivative of <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">Lisp</a>, which is based on <i><a href="https://en.wikipedia.org/wiki/Expression_(computer_science)">expressions</a></i> packaged as lists to be evaluated, rather than <i><a href="https://en.wikipedia.org/wiki/Statement_(computer_science)">statements</a></i> to be executed. . . .
+                    </p>
+
+                    <p>
+                        She wasn't sure what all that exactly meant, but in math, you would plug numbers into a formula and get back an answer. For example, the Scheme way of setting up \(f(x) = x^2\) was this:
+                    </p>
+
+                    <div class="org-src-container">
+
+                        <pre class="src src-scheme" id="orgsrcblock1">(define (mysquare x)
+  (* x x))
+</pre>
+                    </div>
+
+                    <p>
+                        Basically, the expression \(let\ f(x) = x^2\) is <code>(define f x (* x x))</code> but with Scheme, you're encouraged to give your functions more creative names, like <code>myspace</code> rather than \(f\). Now, if we plug in \(2\), <code>(mysquare 2)</code>, we get \(4\). Now, contrast this Scheme code with C code:
+                    </p>
+
+                    <div class="org-src-container">
+
+                        <pre class="src src-c" id="orgsrcblock2">#include &lt;math.h&gt;   /* for sqrt() function */ 
+#include &lt;stdio.h&gt; 
+int main( ) 
+{ 
+  /* variable named x with floating-point data type */ 
+  float x; 
+  /* standard output  writing a positive floating number */ 
+  printf("\nEnter one positive number (1, 2, 3. . .): "); 
+  /* standard input reading floating number */ 
+  scanf("%f", &amp;x); 
+  printf("\nx = %f ", x); 
+  printf("\nSquare for x is = %f", x * x); 
+  return 0; 
+}
+</pre>
+                    </div>
+
+                    <p>
+                        To be fair, Scheme is normally an <i><a href="https://en.wikipedia.org/wiki/Interpreted_language">interpreted language</a></i>, i.e., it has a running <i><a href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a></i> session, where users simply feed it code live and get results back immediately, while C code must be compiled, then executed in order to interact with it. But Kathy had a bad flashback seeing all that code just to get something as simple as a square-a-number function done.
+                    </p>
+
+                    <p>
+                        A bit odd, though, was Scheme's <i><a href="https://en.wikipedia.org/wiki/Polish_notation">prefix</a></i> notation, i.e., how the code wrote \(x\ times\ x\) as <code>(* x x)</code>, but the examples in SICP of <code>(+ 1 3 5 7 11)</code> made the light go on in her head how prefix notation was really handy <i>and</i> followed the Scheme philosophy that the first thing in any list is usually a function&#x2014;even if it's just a basic operator like plus (<code>+</code>). In fact, she found she could write her own plus if she wanted:
+                    </p>
+
+                    <div class="org-src-container">
+
+                        <pre class="src src-scheme" id="orgsrcblock3">(define myplus +)
+</pre>
+                    </div>
+
+                    <p>
+                        . . . and it works just like normal <code>+</code>. And even cooler was not just giving <code>+</code> a alias/pseudonym, but a real definition:
+                    </p>
+
+                    <div class="org-src-container">
+
+                        <pre class="src src-scheme" id="orgsrcblock4">(define (my+func . numbers) 
+  (if (null? numbers)
+      0
+      (+ (car numbers) (apply my+func (cdr numbers)))))
+</pre>
+                    </div>
+
+                    <p>
+                        Kathy had found this code online, and wasn't sure what it was doing, but she ran it in the REPL and it worked: <code>(my+func 1 2 3 4 5)</code>, which gave the correct result of <code>15</code>.
+                    </p>
+
+                    <p>
+                        Reinventing the <i>addition unary operator</i> wasn't much to write home about, but it drove home the idea that addition can also be thought of as a function, just like any $f(x)&#x2026;$ construct, again, with longer, more expressive names than just \(f\) or \(g\) or \(h\) as she knew from math.
+                    </p>
+
+                    <p>
+                        But then what about all those parentheses? Actually, they seemed to be used pretty much like math used them, i.e., to bracket off things meant to be together. In fact, they were supposed to be <i>lists</i>, specifically, nested lists. And so everything is like a <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)">tree</a>. She looked at the SICP "sum of squares" function, which took two squares and added them together:
+                    </p>
+
+                    <div class="org-src-container">
+
+                        <pre class="src src-scheme" id="orgsrcblock5">(define (mysqsum x y)
+  (+ (mysquare x) (mysquare y)))
+</pre>
+                    </div>
+
+                    <p>
+                        Then she drew a picture of <code>mysqsum</code> as a tree.
+                    </p>
+
+
+                    <div class="figure">
+                        <p><img src="tree1.png" alt="tree1.png" />
+                        </p>
+                    </div>
+
+                    <p>
+                        Next in SICP she saw this:
+                    </p>
+
+                    \begin{align*} | x | = \left\{ \begin{array}{r@{\quad \mathrm{if} \quad}l} | x & x \geq 0, \\ \!\! -x & x
+                    < 0. \end{array} \right. \end{align*} <p>
+                        which was then translated into this Scheme code:
+                        </p>
+
+                        <div class="org-src-container">
+
+                            <pre class="src src-scheme" id="orgsrcblock6">(define (myabs x)
+  (cond ((&gt;= x 0) x)
+        ((&lt; x 0) (- x))))
+</pre>
+                        </div>
+
+                        <p>
+                            It gives the <i>absolute value</i> of any number plugged in, e.g., <code>(myabs -1)</code> gives \(1\), <code>(myabs 0)</code> gives \(0\), and <code>(myabs 1)</code> gives \(1\).
+                        </p>
+
+                        <p>
+                            Puzzling out the code, she saw that <code>cond</code> means <i>condition</i>, and that the parens are there to section off each condition to consider. First consider whether \(x\) is greater than or equal to \(0\) with <code>((&gt;= x ) x)</code>. The <code>(&gt;= x)</code> part is called a <i>predicate</i>, a form that resolves to either true (<code>#t</code> in Scheme) or false (<code>#f</code> in Scheme). If <code>#t</code>, <code>myabs</code> just give back the <code>x</code> you plugged in and skips the other <code>cond</code> form. Otherwise, go on to the next form, <code>((&lt; x 0) (- x))</code>, which gives back "the opposite" of the negative <code>x</code>, a positive <code>x</code>. It took her a second or two to <a href="https://en.wikipedia.org/wiki/Grok">grok</a> what they were saying in SICP about how everything inside the deepest nested parens must be evaluated before considering what's next; e.g., with <code>((&gt;= x 0) x)</code>, Scheme first has to do the inside form, <code>(&gt;= x 0)</code>. Once it gets a true or false to the predicate <code>&gt;=</code>, it acts accordingly. So, e.g., if <code>x</code> is \(1\) or \(0\), the <code>(&gt;= x 0)</code> part (form) evaluates to <code>#t</code> and <code>x</code> as you fed it into <code>(myabs 1)</code> wins&#x2014;and then the next chunk, <code>((&lt; x 0) (- x))</code> is skipped. That's how a <code>cond</code> works: It tests conditions, as many as you like! You can stack up a hundred conditions to test for, and as soon as one is true (<code>#t</code>), Scheme skips to the next section outside the <code>cond</code> closing parens.
+                        </p>
+
+                        <p>
+                            Okay, so Kathy wasn't opposed to learning a computer language after all. Sure, it had some basic rules, <i>syntax</i> rules, as they're called, but it all seemed doable with Scheme. And not some death march through the weeds and brambles like C was.
+                        </p>
+                </div>
+            </div>
+
+            <div id="outline-container-orgheadline5" class="outline-2">
+                <h2 id="orgheadline5"><span class="section-number-2">5</span> Algorithms</h2>
+                <div class="outline-text-2" id="text-5">
+                    <p>
+                        That weekend Kathy phoned her older brother, Lee, who had recently moved to Sweden to work for a big <a href="https://en.wikipedia.org/wiki/Telecommunication">telecom</a> company. As she told him about her new job, Lee kept chuckling in a knowing way. He knew exactly where she was at, having had to retool himself from an electrical engineer into a "numerical specialist," too. Now he was doing <a href="https://en.wikipedia.org/wiki/Computer_simulation">computer simulations</a>, writing code to control telephone systems. He agreed that functional programming was the way to go; he and his people used a language called <i><a href="https://en.wikipedia.org/wiki/Erlang_(programming_language)">Erlang</a></i>, which was good at coordinating distributed computing. He also gave her some tips about the scientific computing world. Yes, he had also looked into Scheme and told her about a good, free entry-level book called <i><a href="https://www.cs.berkeley.edu/~bh/ss-toc2.html">Simply Scheme</a></i> by Cal Berkeley computer science professor <a href="http://www.cs.berkeley.edu/~bh/">Brian Harvey</a>.
+                    </p>
+
+                    <p>
+                        Lee also said that although computers and computer science are quite mathematical, the world of computers and math aren't perfect partners. He told the <a href="https://en.wikipedia.org/wiki/Edsger_W._Dijkstra">Edsger Dijkstra</a> quote about how computer science is no more about computers than astronomy is about telescopes. Lee noted that the main use for computers was <i>data management</i>, and that required efficient <i><a href="https://en.wikipedia.org/wiki/Algorithm">algorithms</a></i> to process the data.
+                    </p>
+
+                    <p>
+                        Later, Kathy found the word algorithm popping up repeatedly. She watched <a href="https://www.khanacademy.org/computing/computer-science/algorithms/intro-to-algorithms/v/what-are-algorithms">a Khan Academy video</a> on algorithms. It said <i>. . . an algorithm is a set of steps to accomplish as task.</i> That reminded her of something she saw in a book she had just bought at a used book store, <i>Electronic and Computer Math<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></i>. It often used an <i>algorithmic</i> approach to laying out a math problem. For example, there was a section on adding a subtracting fractions with unlike denominators. She remembered from way back in junior high learning to do <i>prime factorization</i>, which was a trick to find the <i>lowest common multiple</i>, which was, in turn, the <i>common denominator</i>. Like an algorithm, the book layed out steps to getting an answer.
+                    </p>
+
+                    <ul class="org-ul">
+                        <li>find the common denominator (CD)</li>
+                        <li>change the denominator of all fractions to this CD</li>
+                        <li>divide the CD by the old denominator of each fraction</li>
+                        <li>multiply this number by the old numerator to get the new numerator</li>
+                        <li>add (or subtract) the fractions, combining all the like terms in the numerator.</li>
+                    </ul>
+
+                    <p>
+                        Obviously, this sort of algorithmic breakdown was necessary to tell a computer how to do unlike fraction addition. But then a fraction was just another name for a <i><a href="https://en.wikipedia.org/wiki/Rational_number">rational number</a></i>, a fact that didn't occur to her until she was long out of high school. Also, the name <i>rational</i> has more to do with the numerator and denominator forming a <i>ratio</i> than any behavior or common sense the numbers had intrinsically&#x2014;another fact not spoken very often in school. And of course an <a href="https://en.wikipedia.org/wiki/Irrational_number">/irrational number</a>/ was simply not expressible as a ratio, and, again, had nothing to do with its view of life or behavior.
+                    </p>
+
+                    <p>
+                        Brother Lee had also convinced her to install a <a href="https://en.wikipedia.org/wiki/Linux">Linux</a> operating system on her trusty laptop, saying that Linux was what the "big boys and girls" use. He admitted he was kidding&#x2014;sort of&#x2014;but lots of the good software she would need ran natively on Linux&#x2014;such as various <a href="http://community.schemewiki.org/?scheme-faq-standards#implementations">Scheme</a> version, <a href="https://www.gnu.org/software/emacs/">Emacs</a>, <a href="http://www.gnuplot.info/">gnuplot</a>, <a href="https://latex-project.org/">LaTex</a>, and <a href="https://www.gnu.org/software/octave/">GNU Octave</a>, which was a free numerical computations package largely compatible with MATLAB. Once Linux (she went with <a href="http://www.ubuntu.com/">Ubuntu</a>) was installed, she installed four (count em!) versions of Scheme: <a href="https://www.gnu.org/software/mit-scheme/">MIT Scheme</a> (used for SICP), <a href="https://racket-lang.org/">Racket</a>, <a href="http://www.call-cc.org/">Chicken Scheme</a>, and <a href="https://www.gnu.org/software/guile/">Guile</a>. Reading through some documentation, she saw that some Schemes handle rational numbers directly, even giving back rational numbers as answers. For example, in MIT Scheme
+                    </p>
+
+                    <p>
+                        <code>1 ]=&gt; (+ 1/2 1/7)</code>
+                    </p>
+
+                    <p>
+                        yields
+                    </p>
+
+                    <p>
+                        <code>;Value: 9/14</code>
+                    </p>
+
+                    <p>
+                        . . . but that's too easy. Kathy wanted to write her own code to add "fractions" of unlike denominators. Where to start? Well, first she had to figure out how to input the fractions. If she plugged in rational numbers directly,
+                    </p>
+
+                    <div class="org-src-container">
+
+                        <pre class="src src-scheme" id="orgsrcblock7">(define (myaddfracs1 a b)
+       . . .)
+</pre>
+                    </div>
+
+                    <p>
+                        how could she pick the denominators off of <code>a</code> and <code>b</code>? Maybe there was a way, but when she tried <code>(+ (/ 1 2) (/ 1 7))</code> in the REPL, it still gave her <code>9/14</code> in rational format. Good, then something like this:
+                    </p>
+
+                    <div class="org-src-container">
+
+                        <pre class="src src-scheme" id="orgsrcblock8">(define (myaddfracs2 a b c d)
+       . . .)
+</pre>
+                    </div>
+
+                    <p>
+                        That way <code>a</code> and <code>c</code> could be the numerators and <code>b</code> and <code>d</code> the denominators. Good, but what if somebody else were using this software and didn't know to break up two fractions this way? And what operation was supposed to be performed on these fractions, addition or subtraction? So maybe throw in another parameter to indicate plus or minus? But then what about more fractions than just two? How would you add/subtract, say, \(\bfrac{1}{2} + \bfrac{1}{12} + \bfrac{1}{20}\)? Ha! She hadn't even started coding and already things seemed to be getting out of control.
+                    </p>
+
+                    <p>
+                        But then she remembered that bit of code she'd found for doing her own unary plus operator. It had done something odd with a dot to make the function take as many parameters as needed. Maybe she could hack it to work here. But then <code>my+func</code>'s first lines of code wanted to know whether the parameter bundle was empty or not. Good idea! Throw that in, too&#x2014;with a slight new wrinkle:
+                    </p>
+
+                    <div class="org-src-container">
+
+                        <pre class="src src-scheme" id="orgsrcblock9">(define (myaddfracs3 . fracparams)
+  (if (&lt; (length fracparams) 2)
+      #f
+      #t))
+</pre>
+                    </div>
+
+                    <p>
+                        Besides skipping around in SICP and Simply Scheme, she had found Kent Dybvig's <a href="http://www.scheme.com/tspl4/">The Scheme Programming Language</a>, computer music composer Orm Finnendahl's <a href="http://icem-www.folkwang-hochschule.de/~finnendahl/cm_kurse/doc/schintro/schintro_toc.html">An Introduction to Scheme and its Implementation</a>, as well as the Racket Scheme folks' <a href="http://www.ccs.neu.edu/home/matthias/HtDP2e/">How To Design Programs</a> online. Wow! Quite a bit of knowledge about Scheme was out there from very bright, overachiever types. So SICP showed her how to set up an <code>if</code> statement. Then she figured out what the trick in <code>my+func</code> was all about, namely, something called <a href="http://icem-www.folkwang-hochschule.de/~finnendahl/cm_kurse/doc/schintro/schintro_68.html#SEC75">Variable Arity: Procedures that Take a Variable Number of Arguments</a> according to the Finnendahl book. (She also found <a href="http://stackoverflow.com/questions/12658406/how-do-i-handle-an-unspecified-number-of-parameters-in-scheme/12658435#12658435">this</a> and <a href="http://stackoverflow.com/questions/35350798/scheme-variadic-function-to-add-numbers">this</a> discussion at <a href="http://stackoverflow.com/">Stackoverflow</a>.) So the <code>fracparams</code> would be just a Scheme list made up of all the parameters the user fed it. Amazing how all this was just an educated hack based on what she saw with <code>my+func</code>. And so she typed this into her REPL:
+                    </p>
+
+                    <p>
+                        <code>(myaddfracs3 1 2 1 12) \to #t</code>
+                    </p>
+
+                    <p>
+                        . . . <i>and it worked!</i> Then,
+                    </p>
+
+                    <p>
+                        <code>(myaddfracs3 1) \to #f</code>
+                    </p>
+
+                    <p>
+                        and it worked, too.
+                    </p>
+
+                    <p>
+                        Okay, so this solved how to add/subtract as many fractions as you wanted to&#x2014;but now what? Could a rational number be handled by just one parameter&#x2014;or would it always need two, like in <code>myaddfracs2</code>? That would be sort of lame.
+                    </p>
+
+                    <p>
+                        Her brother Lee had actually plowed through SICP back in his college days. (That's what had put him over the top for the Swedish telecom job.) She emailed him, and he replied, telling about a section in SICP (<a href="http://sarabander.github.io/sicp/html/2_002e1.xhtml#g_t2_002e1">2.1 Introduction to Data Abstraction</a>) that talked precisely about this issue. After reading through it, she learned about <i>pairs</i> in the Lisp/Scheme world. But then she needed to hit the Internet to find something about these <i>pairs</i>.
+                    </p>
+
+                    <p>
+                        Well, it turned out to be a longer stop than she originally expected. She first had to back up a bit and learn the whole idea behind <i>lists</i> in the Lisp/Scheme world. Lisp, after all, stands for <i>list processing</i>, and, yes, it's all about lists in the Scheme world as well. She found a good explanation at the Finnendahl site <a href="http://icem-www.folkwang-hochschule.de/~finnendahl/cm_kurse/doc/schintro/schintro_93.html">here</a> that talked about building lists. Basically, it's all about something from computer science called a <i><a href="https://en.wikipedia.org/wiki/Linked_list">linked list</a></i>, a data structure where data looked like it was being stored in connected train cars. So if you had a Scheme list <code>(1 2 3)</code>, it looked like this
+                    </p>
+
+
+                    <div class="figure">
+                        <p><img src="omnigraphics/list123.png" alt="list123.png" />
+                        </p>
+                    </div>
+
+                    <p>
+                        inside of Scheme, i.e., there were three quasi-boxcars, each boxcar divided into two compartments or sections. The front section was where a <i>pointer</i> pointed to the actual thing being carried&#x2014;like the numbers <code>1</code>, <code>2</code>, and <code>3</code> in our example above&#x2014;while the back section had a pointer pointing to the next boxcar. Notice how the very last boxcar's back section's pointer points to <code>NIL</code>, which is to say&#x2014;the official Scheme way&#x2014;that's the end of the train.
+                    </p>
+
+                    <p>
+                        Then there was the /syntactical culture,/ so to speak, for dealing with lists. In order to build a list you used the <code>cons</code> command. So
+                    </p>
+
+                    <p>
+                        <code>(cons 1 nil)</code>
+                    </p>
+
+                    \begin{align*} A(m,n) = \left\{ \begin{array}{r@{\quad \mathrm{if} \quad}l} n + 1 & m = 0, \\ A(m - 1,1) & m > 0\ and\ n = 0, \\ A(m -1, A(m,n -1)) & m > 0\ and\ n > 0. \end{array} \right. \end{align*}
+                </div>
+            </div>
+
+
+
+            <div id="outline-container-orgheadline6" class="outline-2">
+                <h2 id="orgheadline6"><span class="section-number-2">6</span> <i>Pi</i> from an algorithmic standpoint</h2>
+                <div class="outline-text-2" id="text-6">
+                    <p>
+                        . . .for example, Kathy found out <i>pi</i>, the ratio of a circle's circumference and its diameter, can be derived in many ways. And even before the dawn of computers, numerical methods were used to get at a real solution to the basic \(\pi = \bfrac{C}{d}\).
                     </p>
                 </div>
             </div>
 
 
-            <div id="outline-container-orgheadline5" class="outline-2">
-                <h2 id="orgheadline5"><span class="section-number-2">4</span> A Warm-up: Prime Factorization For Unlike Denominators</h2>
-                <div class="outline-text-2" id="text-4">
+            <div id="outline-container-orgheadline8" class="outline-2">
+                <h2 id="orgheadline8"><span class="section-number-2">7</span> A Warm-up: Prime Factorization For Unlike Denominators</h2>
+                <div class="outline-text-2" id="text-7">
                     <p>
                         Seriously large denominators require the <i>prime factoring</i> method in order to get like-denominators.
                     </p>
@@ -554,9 +855,9 @@
                     </p>
                 </div>
 
-                <div id="outline-container-orgheadline4" class="outline-3">
-                    <h3 id="orgheadline4"><span class="section-number-3">4.1</span> A bit of Algebra; Using <i>symbols</i> for primes.</h3>
-                    <div class="outline-text-3" id="text-4-1">
+                <div id="outline-container-orgheadline7" class="outline-3">
+                    <h3 id="orgheadline7"><span class="section-number-3">7.1</span> A bit of Algebra; Using <i>symbols</i> for primes.</h3>
+                    <div class="outline-text-3" id="text-7-1">
                         <ul class="org-ul">
                             <li>
                                 <p>
@@ -718,7 +1019,38 @@
                                 </p>
                             </li>
                         </ul>
+
+
+
+
+                        <div class="figure">
+                            <p><img src="other12.png" alt="other12.png" />
+                            </p>
+                        </div>
                     </div>
+                </div>
+            </div>
+            <div id="footnotes">
+                <h2 class="footnotes">Footnotes: </h2>
+                <div id="text-footnotes">
+
+                    <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup>
+                        <div class="footpara">
+                            <p class="footpara">
+                                Harold Abelson and Gerald Sussman, <i>Structure and Interpretation of Computer Programs; Second Edition</i> (MIT Press), <a href="http://sarabander.github.io/sicp/html/index.xhtml">http://sarabander.github.io/sicp/html/index.xhtml</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup>
+                        <div class="footpara">
+                            <p class="footpara">
+                                Bill Deem and Tony Zannini, <i>Electronics and Computer Math; Seventh Edition</i> (Prentice Hall), 124.
+                            </p>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -726,7 +1058,7 @@
             <p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">[2015-10-06 Tue 14:32]</span></span>
             </p>
             <p class="author">Author: teilchen010</p>
-            <p class="date">Created: 2016-02-09 Tue 19:39</p>
+            <p class="date">Created: 2016-02-27 Sat 19:15</p>
             <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
         </div>
     </body>

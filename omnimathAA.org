@@ -1,0 +1,41 @@
+#+TITLE: Prepatory Mathematics in the Age of Information
+#+AUTHOR: teilchen010
+#+EMAIL: teilchen010@gmail.com
+# date ... will set (change) each time (if remembered)
+#+DATE: [2015-10-06 Tue 14:32]
+#+FILETAGS: :math:
+#+LANGUAGE:  en
+#+HTML_HEAD: <link rel="stylesheet" href="data/stylesheet.css" type="text/css">
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+HTML_MATHJAX: align: left indent: 5em tagside: left font: Neo-Euler font-size: 2.5em
+#+LATEX_HEADER: \usepackage[makeroom]{cancel}
+# #+LATEX_CLASS: tuftehandout
+#+OPTIONS: H:10 num:4 toc:t \n:nil @:t ::t |:t _:{} *:t ^:{} prop:t
+#+OPTIONS: prop:t
+#+OPTIONS: tex:t
+#+STARTUP: showall
+#+STARTUP: align
+#+STARTUP: indent
+#+STARTUP: entitiespretty
+#+STARTUP: logdrawer
+#+STARTUP: hidestars
+#+STARTUP: latexpreview
+#+STARTUP: hideblocks
+
+#+begin_html
+<script type="text/x-mathjax-config">
+	  MathJax.Hub.Config({
+	    TeX: {extensions: ["cancel.js"]},
+	    tex2jax: {
+	      inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+	      processEscapes: true
+	    }
+	  });
+	</script>
+#+end_html
+
+* Appendix A
+
+Kathy had been advised by her Clojure programming colleague to use the [[https://en.wikipedia.org/wiki/Emacs][Emacs]] editor, which, he said, was what all the "big boys and girls" use. Once she had Emacs going, the parentheses forest seemed manageable: First, Emacs formatted the Scheme code with common sense indentation. Second, you could highlight any particular parenthesis---and its matching opposite partner would light up. She was also encouraged to learn and use [[https://git-scm.com/][git]] to "version control" everything she did. Steep learning curve, but she had anticipated a hard uphill slog. [See Appendix B]
+
