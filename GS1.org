@@ -134,8 +134,8 @@ might not take it after all. Wow.\\
 @@html:<span class="fraktur">@@𝔘𝔱𝔢:@@html:</span>@@ Bottom line: We've
 got a once-in-a-lifetime chance to really learn a ton about
 comp-sci. Yeah, psyched! \\
-@@html:<span class="fraktur">@@𝔘𝔴𝔢:@@html:</span>@@ Now all we have to do
-is hang on for dear life! \\
+@@html:<span class="fraktur">@@𝔘𝔴𝔢:@@html:</span>@@ Now all we have to
+do is hang on for dear life! \\
 [laughter] \\
 @@html:<span class="fraktur">@@𝔘𝔯𝔰𝔲𝔩𝔞:@@html:</span>@@ [paging through
 /Haskell Road.../ ] Did anyone look at the first chapter? \\
@@ -158,6 +158,28 @@ $35\;$?  \\
 because a rod or measuring tape that's $7$ units long can then measure
 out a length of $35$ perfectly? \\
 [murmurs of agreement] \\
+@@html:<span class="fraktur">@@𝔘𝔴𝔢:@@html:</span>@@ Oh, and do you
+remember the whole Euclid thing about the /transitivity of equality/?
+[murmurs of affirmation] \\
+@@html:<span class="fraktur">@@𝔘𝔯𝔰𝔲𝔩𝔞:@@html:</span>@@ Yeah, Herr
+Adriansen, Danish minority from Schleswig. Cool accent. Made fun of
+Frisians. He gave us that little talk about why old-school Euclidean
+Geometry was so important. \\
+@@html:<span class="fraktur">@@𝔘𝔴𝔢:@@html:</span>@@ Yes, because you
+have to get used to the idea that math is built up from logical
+deductions that in turn are based on axioms. \\
+@@html:<span class="fraktur">@@𝔘𝔱𝔢:@@html:</span>@@ And he complained
+bitterly about how math was being taught, how it was sliding into just
+circus animals learning by conditioning. \\
+@@html:<span class="fraktur">@@𝔘𝔴𝔢:@@html:</span>@@ The whole, /when
+you see this, do this/ approach to math.[fn:2]
+
+
+
+
+
+
+
 @@html:<span class="fraktur">@@𝔘𝔯𝔰𝔲𝔩𝔞:@@html:</span>@@ Well, I
 remember prime factorization was based on the [[https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic][Fundamental Theorem of
 Arithmetic]] from dear old Euclid. [bringing up the Wikipedia article
@@ -181,7 +203,7 @@ opposite direction. \\
 [laughter] \\
 @@html:<span class="fraktur">@@𝔘𝔱𝔢:@@html:</span>@@ Wasn't it amazing
 how Professor Chandra just put two fractions with huge unlike
-denominators into the Racket command line[fn:2]. Did anybody besides
+denominators into the Racket command line[fn:3]. Did anybody besides
 me install it? \\
 [affirmative murmurs] \\
 @@html:<span class="fraktur">@@𝔘𝔯𝔰𝔲𝔩𝔞:@@html:</span>@@ [bringing up
@@ -254,7 +276,7 @@ crossMult 1 15 255
 : 17.0
 
 @@html:<span class="fraktur">@@𝔘𝔴𝔢:@@html:</span>@@ So you're doing an
-anonymous function[fn:3], right? \\
+anonymous function[fn:4], right? \\
 @@html:<span class="fraktur">@@𝔘𝔯𝔰𝔲𝔩𝔞:@@html:</span>@@ Right. Yeah,
 pretty neat, huh? \\
 @@html:<span class="fraktur">@@𝔘𝔴𝔢:@@html:</span>@@ And you're not
@@ -339,7 +361,7 @@ class adds a property or trait to types. It's starting to get clearer
 --- maybe. \\
 [murmurs of agreement] \\
 @@html:<span class="fraktur">@@𝔘𝔯𝔰𝔲𝔩𝔞:@@html:</span>@@ Let me go to a
-link on [[https://stackoverflow.com/questions/35950600/why-it-is-impossible-to-divide-integer-number-in-haskell][stackoverflow]] that talks about this[fn:4]. Getting
+link on [[https://stackoverflow.com/questions/35950600/why-it-is-impossible-to-divide-integer-number-in-haskell][stackoverflow]] that talks about this[fn:5]. Getting
 there... [displays post on monitor] Right. So the original post has
 this and wonders why the error
 
@@ -367,7 +389,7 @@ it ineligible for doing regular /fractional/ division. \\
 the type and class system behind all this doesn't allow it. \\
 @@html:<span class="fraktur">@@𝔘𝔯𝔰𝔲𝔩𝔞:@@html:</span>@@ Yes, as far as
 I can tell. Did you get through the /Learn You.../ part on type
-classes[fn:5]? \\
+classes[fn:6]? \\
 @@html:<span class="fraktur">@@𝔘𝔴𝔢:@@html:</span>@@ Yes, but... \\
 [laughter] \\
 @@html:<span class="fraktur">@@𝔘𝔯𝔰𝔲𝔩𝔞:@@html:</span>@@ I emailed the
@@ -549,12 +571,12 @@ check all this?  \\
 not yet. And I say that because /The Haskell Road.../ has a way we
 should learn. I looked at it. \\
 @@html:<span class="fraktur">@@𝔘𝔯𝔰𝔲𝔩𝔞:@@html:</span>@@ Well, I asked
-Mutti[fn:6] about this --- and she said we should look into the /least
+Mutti[fn:7] about this --- and she said we should look into the /least
 common multiple/, because that's what this lowest common denominator
 issue is all about. And yes, I knew that but had forgotten. So here's
-the Wikipedia article on it[fn:7]. [displays page on monitor] \\
+the Wikipedia article on it[fn:8]. [displays page on monitor] \\
 @@html:<span class="fraktur">@@𝔘𝔴𝔢:@@html:</span>@@ [mumbling the
-first sentence[fn:8]] You're right. I knew this but had lost track of
+first sentence[fn:9]] You're right. I knew this but had lost track of
 it. \\
 @@html:<span class="fraktur">@@𝔘𝔱𝔢:@@html:</span>@@ Which means we
 /don't/ want to kick out /any/ primes with the same exponent just
@@ -650,7 +672,7 @@ you lost me on the ~(*dnom1)~ and ~(*dnom2)~. What's going on there?
 \\
 @@html:<span class="fraktur">@@𝔘𝔯𝔰𝔲𝔩𝔞:@@html:</span>@@ That's what
 they call a /section/. I got that the other day from /A Gentle
-Introduction to Haskell/[fn:9]. Basically, ~*dnom1~ is made into a
+Introduction to Haskell/[fn:10]. Basically, ~*dnom1~ is made into a
 function that takes whatever ~dnom1~ is and applies it just as if it
 were a function to the ~x~. So ~(*dnom1)x~ is the same as just ~x *
 dnom1~. Here's an example [typing into the ghci REPL]
@@ -729,7 +751,7 @@ parentheses, right? \\
 packaging up a common operator like plus or times, and maybe a
 variable, to work as a function. \\
 @@html:<span class="fraktur">@@𝔘𝔴𝔢:@@html:</span>@@ /Luft von anderem
-Planeten/[fn:10] \\
+Planeten/[fn:11] \\
 [laughter] \\
 @@html:<span class="fraktur">@@𝔘𝔴𝔢:@@html:</span>@@ [continuing] No,
 really, I barely understand that anonymous stuff, but I hear you
@@ -795,9 +817,9 @@ myLCM 15 85
 : [255]
 
 @@html:<span class="fraktur">@@𝔘𝔯𝔰𝔲𝔩𝔞:@@html:</span>@@ So this is a
-/list comprehension/[fn:11], and a list comprehension is just the
+/list comprehension/[fn:12], and a list comprehension is just the
 Haskell version of a set comprehension or /set-builder
-notation/[fn:12] from set theory. And it's going through the multiples
+notation/[fn:13] from set theory. And it's going through the multiples
 of $15$ and $85$, one after the other like this [writing on the board]
 
 #+begin_example
@@ -903,34 +925,36 @@ easy getting there. \\
 
 [fn:1] German for /dad/, /papa/.
 
-[fn:2] Professor Chandra has demonstrated at the Racket command line
+[fn:2] Take a break and check out this theory treatment.
+
+[fn:3] Professor Chandra has demonstrated at the Racket command line
 how rationals could be directly added, e.g., \\
 ~> (+ 1/32 1/943720)~ \\
 and get back \\
 ~117969/3774880~
 
-[fn:3] Check out anonymous or /lambda/ functions [[http://learnyouahaskell.com/higher-order-functions#lambdas][here]].
+[fn:4] Check out anonymous or /lambda/ functions [[http://learnyouahaskell.com/higher-order-functions#lambdas][here]].
 
-[fn:4] See [[https://stackoverflow.com/questions/35950600/why-it-is-impossible-to-divide-integer-number-in-haskell][Why it is impossible to divide Integer number in Haskell?]]
+[fn:5] See [[https://stackoverflow.com/questions/35950600/why-it-is-impossible-to-divide-integer-number-in-haskell][Why it is impossible to divide Integer number in Haskell?]]
 
-[fn:5] See [[http://learnyouahaskell.com/types-and-typeclasses#typeclasses-101][Typeclasses 101]] in /Learn You a Haskell.../.
+[fn:6] See [[http://learnyouahaskell.com/types-and-typeclasses#typeclasses-101][Typeclasses 101]] in /Learn You a Haskell.../.
 
-[fn:6] German for /mom/, /mama/.
+[fn:7] German for /mom/, /mama/.
 
-[fn:7] See the article [[https://en.wikipedia.org/wiki/Least_common_multiple][here]].
+[fn:8] See the article [[https://en.wikipedia.org/wiki/Least_common_multiple][here]].
 
-[fn:8] @@html:<font color = "#0d3db3">@@...In arithmetic and number
+[fn:9] @@html:<font color = "#0d3db3">@@...In arithmetic and number
 theory, the /least common multiple/, /lowest common multiple/, or
 /smallest common multiple/ of two integers $a$ and $b\:$, usually
 denoted by $lcm(a, b)\:$, is the smallest positive integer that is
 divisible by both $a$ and $b\;$...@@html:</font>@@
 
-[fn:9] Available [[https://www.haskell.org/tutorial/][here]]. The page dealing with /sections/ is [[https://www.haskell.org/tutorial/functions.html][here]] in
+[fn:10] Available [[https://www.haskell.org/tutorial/][here]]. The page dealing with /sections/ is [[https://www.haskell.org/tutorial/functions.html][here]] in
 3.2.1. Also The [[https://wiki.haskell.org/Section_of_an_infix_operator][wiki.haskell.org]] has a page on sections as well.
 
-[fn:10] A famous line from a Stefan Georg poem: /Ich fühle Luft von
+[fn:11] A famous line from a Stefan Georg poem: /Ich fühle Luft von
 anderem Planeten/ or /I feel (the) air of (the other) another planet./
 
-[fn:11] See [[http://learnyouahaskell.com/starting-out#im-a-list-comprehension][this]] from LYAHFGG.
+[fn:12] See [[http://learnyouahaskell.com/starting-out#im-a-list-comprehension][this]] from LYAHFGG.
 
-[fn:12] See Wikipedia's [[https://en.wikipedia.org/wiki/Set-builder_notation][Set-builder notation]]
+[fn:13] See Wikipedia's [[https://en.wikipedia.org/wiki/Set-builder_notation][Set-builder notation]]
