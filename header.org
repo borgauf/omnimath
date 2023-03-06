@@ -36,6 +36,7 @@
       <li>Numbers</li>
       <ul>
          <a href="HRGettingStarted1.html" target="_blank"><li>Getting Started 1</li></a>
+         <a href="HRGettingStarted2.html" target="_blank"><li>Getting Started 2</li></a>
          <a href="numbers1.html" target="_blank"><li>Numbers 1</li></a>
          <a href="numbers2.html" target="_blank"><li>Numbers 2</li></a>
       </ul>
