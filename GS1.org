@@ -794,7 +794,8 @@ is using the Haskell index operator ~!!~ to say "give me the third
 element," which is the function ~(3+)~. Even though it says ~2~, the
 index starts at ~0~, so the third function in ~myListOfAddFuncs~ is
 ~(3+)~ and ~map~ then applies it across ~[1,2,3]~ giving ~[4,5,6]~
-since it adds ~3~ to each element of the input list. See? \\
+since it adds ~3~ to each element of the input list. See?
+/Verstanden?/ \\
 [nods and murmurs of agreement] \\
 @@html:<span class="fraktur">@@𝔘𝔴𝔢:@@html:</span>@@ So back to the ---
 list comprehension? Is that what it's called? \\
